@@ -15,8 +15,10 @@
 <h2>発足</h2><br>
 <span th:text="${baseball.inauguration}"></span><br>
 
-<h2>歴史</h2><br>
-<div th:text="${baseball.history}"<br>></div> <br>
+<h2>歴史</h2>
+<th:block th:each="stat : ${baseball.history.split('\r\n|\r|\n', -1)}">
+		<p th:text="${stat}"></p>
+	</th:block>
 
 <a th:href="@{/baseball}"><button>戻る</button></a>
 </body>
